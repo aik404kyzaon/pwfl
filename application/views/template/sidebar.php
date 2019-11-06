@@ -21,7 +21,8 @@
 		<ul class="sidebar-menu" data-widget="tree">
 			<!-- <li class="header"><a href="<?= base_url() ?>">Dashboard</a></li> -->
 			<!-- <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li> -->
-			<li><a href="#"><i class="fa fa-database"></i> <span>Data Mahasiswa</span></a></li>
+			<li><a href="<?= base_url(); ?>mahasiswa"><i class="fa fa-database"></i> <span>Data Mahasiswa</span></a></li>
+			<li><a href="<?= base_url(); ?>mahasiswa/log"><i class="fa fa-database"></i> <span>Riwayat</span></a></li>
 			<!-- <li class="treeview">
 				<a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
 					<span class="pull-right-container">
