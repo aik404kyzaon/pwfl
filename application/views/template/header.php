@@ -11,17 +11,17 @@
 	<link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/Ionicons/css/ionicons.min.css">
 	<link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/AdminLTE.min.css">
 	<link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/skins/skin-blue.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-	<link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 	<link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini fixed">
 	<div class="wrapper">
 		<header class="main-header">
 			<a href="<?= base_url() ?>" class="logo">
-				<span class="logo-mini"><b>A</b>LT</span>
-				<span class="logo-lg"><b>Admin</b>LTE</span>
+				<span class="logo-mini"></span>
+				<span class="logo-lg"></span>
 			</a>
 			<nav class="navbar navbar-static-top" role="navigation">
 				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">

@@ -2,8 +2,7 @@
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1>
-			Data Tables
-			<small>advanced tables</small>
+			Data Mahasiswa
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -16,8 +15,13 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<!-- <h3 class="box-title">Data Table With Full Features</h3> -->
-						<a href="" class="btn bg-olive btn-flat margin">Tambah Data</a>
+						<?php if ($this->session->flashdata()) : ?>
+							<div class="alert alert-success alert-dismissible">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<?= $this->session->flashdata('flash'); ?>
+							</div>
+						<?php endif; ?>
+						<a href="<?= base_url() ?>mahasiswa/add" class="btn bg-olive btn-flat margin">Tambah Data</a>
 					</div>
 					<div class="box-body">
 						<table id="example1" class="table table-bordered table-striped">
@@ -44,8 +48,8 @@
 										<td><?= $mhs['alamat']; ?></td>
 										<td><?= $mhs['telp']; ?></td>
 										<td>
-											<a class="btn btn-default btn-flat" title="Ubah"><i class="fa fa-edit"></i></a>
-											<a class="btn btn-default btn-flat" title="Hapus"><i class="fa fa-trash"></i></a>
+											<a class="btn btn-default btn-flat" title="Ubah"><i class="fa fa-edit" style="color:blue"></i></a>
+											<a class="btn btn-default btn-flat" title="Hapus"><i class="fa fa-trash" style="color:red"></i></a>
 										</td>
 									</tr>
 								<?php endforeach; ?>
