@@ -21,7 +21,7 @@
 								<?= $this->session->flashdata('flash'); ?>
 							</div>
 						<?php endif; ?>
-						<a href="<?= base_url() ?>mahasiswa/add" class="btn bg-olive btn-flat margin">Tambah Data</a>
+						<a href="<?= base_url(); ?>mahasiswa/add" class="btn bg-olive btn-flat margin">Tambah Data</a>
 					</div>
 					<div class="box-body">
 						<table id="example1" class="table table-bordered table-striped">
@@ -48,8 +48,8 @@
 										<td><?= $mhs['alamat']; ?></td>
 										<td><?= $mhs['telp']; ?></td>
 										<td>
-											<a class="btn btn-default btn-flat" title="Ubah"><i class="fa fa-edit" style="color:blue"></i></a>
-											<a class="btn btn-default btn-flat" title="Hapus"><i class="fa fa-trash" style="color:red"></i></a>
+											<a href="<?= base_url(); ?>mahasiswa/update/<?= $mhs['id']; ?>" class="btn btn-default btn-flat" title="Ubah"><i class="fa fa-edit" style="color:blue"></i></a>
+											<a href="<?= base_url(); ?>mahasiswa/delete/<?= $mhs['id']; ?>" class="btn btn-default btn-flat" title="Hapus" onclick="return confirm('Anda yakin menghapus data ini?');"><i class="fa fa-trash" style="color:red"></i></a>
 										</td>
 									</tr>
 								<?php endforeach; ?>

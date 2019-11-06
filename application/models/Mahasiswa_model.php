@@ -25,4 +25,9 @@ class Mahasiswa_model extends CI_Model
 		];
 		$this->db->insert('tb_mhs', $data);
 	}
+	public function hapusDataMahasiswa($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('tb_mhs');
+	}
 }
