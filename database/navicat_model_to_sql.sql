@@ -7,7 +7,7 @@ CREATE TABLE `tb_log` (
 PRIMARY KEY (`id`) 
 )
 ENGINE = InnoDB
-AUTO_INCREMENT = 14
+AUTO_INCREMENT = 22
 AVG_ROW_LENGTH = 0
 DEFAULT CHARACTER SET = latin1
 COLLATE = latin1_swedish_ci
@@ -53,3 +53,9 @@ DEFINER=`root`@`localhost`
 SQL SECURITY DEFINER
 VIEW `tampil_mhs` AS 
 select * from tb_mhs;
+CREATE 
+ALGORITHM=UNDEFINED
+DEFINER=`root`@`localhost`
+SQL SECURITY DEFINER
+VIEW `tampil_semua` AS 
+select tb_mhs.nim,tb_mhs.nama,tb_mhs.jk,tb_mhs.alamat,tb_log.telp_lama,tb_log.telp_baru,tb_log.tgl_diubah from tb_mhs inner join tb_log on tb_mhs.nim = tb_log.nim;

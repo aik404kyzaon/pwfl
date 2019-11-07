@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Nov 2019 pada 03.54
+-- Waktu pembuatan: 07 Nov 2019 pada 05.45
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -54,6 +54,22 @@ CREATE TABLE `tampil_mhs` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in struktur untuk tampilan `tampil_semua`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `tampil_semua` (
+`nim` varchar(12)
+,`nama` varchar(32)
+,`jk` varchar(1)
+,`alamat` varchar(32)
+,`telp_lama` varchar(13)
+,`telp_baru` varchar(13)
+,`tgl_diubah` datetime
+);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_log`
 --
 
@@ -70,19 +86,14 @@ CREATE TABLE `tb_log` (
 --
 
 INSERT INTO `tb_log` (`id`, `nim`, `telp_lama`, `telp_baru`, `tgl_diubah`) VALUES
-(1, '161240000595', '089876543210', '089876543215', '2019-11-04 02:32:44'),
-(2, '161240000518', '089876543211', '089876543216', '2019-11-04 02:32:49'),
-(3, '161240000546', '089876543212', '089876543217', '2019-11-04 02:32:54'),
-(4, '161240000526', '089876543213', '089876543218', '2019-11-04 02:32:59'),
-(5, '161240000552', '089501800531', '089501800531', '2019-11-06 23:59:11'),
-(6, '161240000552', '089501800531', '089501800531', '2019-11-06 23:59:18'),
-(7, '161240000526', '089876543218', '089876543218', '2019-11-07 00:49:44'),
-(8, '161240000526', '089876543218', '089876543218', '2019-11-07 00:49:52'),
-(9, '161240000552', '089501800531', '089501800531', '2019-11-07 00:50:58'),
-(10, '161240000526', '089876543218', '089876543218', '2019-11-07 01:11:28'),
-(11, '161240000526', '089876543218', '089876543218', '2019-11-07 01:11:34'),
-(12, '161240000552', '089501800531', '089501800532', '2019-11-07 09:49:32'),
-(13, '161240000552', '089501800532', '089501800532', '2019-11-07 09:51:24');
+(14, '161240000552', '089501800532', '089501800531', '2019-11-07 11:24:29'),
+(15, '161240000552', '089501800531', '08987654331', '2019-11-07 11:37:39'),
+(16, '161240000595', '089876543215', '08987654332', '2019-11-07 11:37:47'),
+(17, '161240000518', '089876543216', '08987654332', '2019-11-07 11:37:55'),
+(18, '161240000518', '08987654332', '08987654333', '2019-11-07 11:38:02'),
+(19, '161240000546', '089876543217', '08987654334', '2019-11-07 11:38:21'),
+(20, '161240000526', '089876543218', '08987654335', '2019-11-07 11:38:29'),
+(21, '161240000534', '08912910215', '08987654336', '2019-11-07 11:38:37');
 
 -- --------------------------------------------------------
 
@@ -104,13 +115,12 @@ CREATE TABLE `tb_mhs` (
 --
 
 INSERT INTO `tb_mhs` (`id`, `nim`, `nama`, `jk`, `alamat`, `telp`) VALUES
-(1, '161240000552', 'Arky Ikfarikza', 'L', 'Wonosari', '089501800532'),
-(2, '161240000595', 'Muhamad Sakti Ababil', 'L', 'Pengkol', '089876543215'),
-(3, '161240000518', 'Fattakh Faza Ababiel', 'L', 'Jobokuto', '089876543216'),
-(4, '161240000546', 'Dicky Daryono', 'L', 'Pekalongan', '089876543217'),
-(5, '161240000526', 'Sigma Luxvian', 'P', 'Plajan', '089876543218'),
-(8, '161240000534', 'Farid Hernando', 'L', 'Mlonggo', '08912910215'),
-(9, '161240000532', 'Mahardhika', 'L', 'Jepara', '08912910222');
+(1, '161240000552', 'Arky Ikfarikza', 'L', 'Wonosari', '08987654331'),
+(2, '161240000595', 'Muhamad Sakti Ababil', 'L', 'Pengkol', '08987654332'),
+(3, '161240000518', 'Fattakh Faza Ababiel', 'L', 'Jobokuto', '08987654333'),
+(4, '161240000546', 'Dicky Daryono', 'L', 'Pekalongan', '08987654334'),
+(5, '161240000526', 'Sigma Luxvian', 'P', 'Plajan', '08987654335'),
+(8, '161240000534', 'Farid Hernando', 'L', 'Mlonggo', '08987654336');
 
 --
 -- Trigger `tb_mhs`
@@ -144,6 +154,15 @@ DROP TABLE IF EXISTS `tampil_mhs`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tampil_mhs`  AS  select `tb_mhs`.`id` AS `id`,`tb_mhs`.`nim` AS `nim`,`tb_mhs`.`nama` AS `nama`,`tb_mhs`.`jk` AS `jk`,`tb_mhs`.`alamat` AS `alamat`,`tb_mhs`.`telp` AS `telp` from `tb_mhs` ;
 
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `tampil_semua`
+--
+DROP TABLE IF EXISTS `tampil_semua`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tampil_semua`  AS  select `tb_mhs`.`nim` AS `nim`,`tb_mhs`.`nama` AS `nama`,`tb_mhs`.`jk` AS `jk`,`tb_mhs`.`alamat` AS `alamat`,`tb_log`.`telp_lama` AS `telp_lama`,`tb_log`.`telp_baru` AS `telp_baru`,`tb_log`.`tgl_diubah` AS `tgl_diubah` from (`tb_mhs` join `tb_log` on((`tb_mhs`.`nim` = `tb_log`.`nim`))) ;
+
 --
 -- Indexes for dumped tables
 --
@@ -168,7 +187,7 @@ ALTER TABLE `tb_mhs`
 -- AUTO_INCREMENT untuk tabel `tb_log`
 --
 ALTER TABLE `tb_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_mhs`

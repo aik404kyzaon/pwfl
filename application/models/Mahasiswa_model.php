@@ -10,7 +10,7 @@ class Mahasiswa_model extends CI_Model
 		// NOTE cara join isi tabel
 		/* $this->db->select('*');
 		$this->db->from('tb_mhs');
-		$this->db->join('tb_log', 'tb_mhs.id = tb_log.id');
+		$this->db->join('tb_log', 'tb_mhs.nim = tb_log.nim');
 		return $this->db->get()->result_array(); */
 	}
 	public function tambahDataMahasiswa()
@@ -47,6 +47,6 @@ class Mahasiswa_model extends CI_Model
 	}
 	public function getLog()
 	{
-		return $this->db->get('tampil_log')->result_array();
+		return $this->db->get('tampil_semua')->result_array();
 	}
 }
