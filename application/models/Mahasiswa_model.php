@@ -3,11 +3,10 @@ class Mahasiswa_model extends CI_Model
 {
 	public function getAllMahasiswa()
 	{
-		// NOTE cara 1 mengambil isi tabel
-		/* $query = $this->db->get('tb_mhs');
+		/* $query = $this->db->get('tb_mhs'); // NOTE cara 1 mengambil isi tabel
 		return $query->result_array(); */
-		// NOTE cara 2 mengambil isi tabel
-		return $this->db->get('tb_mhs')->result_array();
+		/* return $this->db->get('tb_mhs')->result_array(); */ // NOTE cara 2 mengambil isi tabel
+		return $this->db->get('tampil_mhs')->result_array(); // NOTE cara mengambil data view database
 		// NOTE cara join isi tabel
 		/* $this->db->select('*');
 		$this->db->from('tb_mhs');
@@ -45,5 +44,9 @@ class Mahasiswa_model extends CI_Model
 		];
 		$this->db->where('id', $this->input->post('id'));
 		$this->db->update('tb_mhs', $data);
+	}
+	public function getLog()
+	{
+		return $this->db->get('tampil_log')->result_array();
 	}
 }
