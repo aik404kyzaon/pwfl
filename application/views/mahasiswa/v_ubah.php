@@ -3,11 +3,6 @@
 		<h1>
 			Ubah Mahasiswa
 		</h1>
-		<ol class="breadcrumb">
-			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-			<li><a href="#">Tables</a></li>
-			<li class="active">Data tables</li>
-		</ol>
 	</section>
 	<section class="content">
 		<div class="row">
@@ -16,7 +11,7 @@
 					<?= form_open(); ?>
 					<input type="hidden" name="id" value="<?= $mahasiswa['id']; ?>">
 					<div class="box-body">
-						<!-- <?php if (validation_errors()) : ?> //NOTE menampilkan semua validasi error
+						<!-- <?php if (validation_errors()) : ?>
 							<div class="alert alert-danger alert-dismissible">
 								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 								<?= validation_errors() ?>
@@ -37,7 +32,7 @@
 							<div>
 								<?= form_radio('jk', 'L', $mahasiswa['jk'] == 'L' ? 'checked' : '', TRUE) ?>Laki- Laki
 								<?= form_radio('jk', 'P', $mahasiswa['jk'] == 'P' ? 'checked' : '', TRUE) ?> Perempuan
-								<!-- <input type="radio" name="jk" id="jk" value="L" <?= $mahasiswa['jk'] == 'L' ? 'checked' : '' ?>>Laki-Laki // NOTE cara ini juga bosa
+								<!-- <input type="radio" name="jk" id="jk" value="L" <?= $mahasiswa['jk'] == 'L' ? 'checked' : '' ?>>Laki-Laki
 								<input type="radio" name="jk" id="jk" value="P" <?= $mahasiswa['jk'] == 'P' ? 'checked' : '' ?>>Perempuan -->
 							</div>
 						</div>

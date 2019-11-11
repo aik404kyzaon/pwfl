@@ -1,13 +1,8 @@
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1>
-			Tambah Mahasiswa
+			Tambah Data Mahasiswa
 		</h1>
-		<ol class="breadcrumb">
-			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-			<li><a href="#">Tables</a></li>
-			<li class="active">Data tables</li>
-		</ol>
 	</section>
 	<section class="content">
 		<div class="row">
@@ -15,7 +10,7 @@
 				<div class="box box-primary">
 					<?= form_open(); ?>
 					<div class="box-body">
-						<!-- <?php if (validation_errors()) : ?> //NOTE menampilkan semua validasi error
+						<!-- <?php if (validation_errors()) : ?>
 							<div class="alert alert-danger alert-dismissible">
 								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 								<?= validation_errors() ?>
