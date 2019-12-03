@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2019 at 07:10 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Waktu pembuatan: 07 Nov 2019 pada 05.45
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,8 +25,8 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `tampil_log`
--- (See below for the actual view)
+-- Stand-in struktur untuk tampilan `tampil_log`
+-- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `tampil_log` (
 `id` int(11)
@@ -39,8 +39,8 @@ CREATE TABLE `tampil_log` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `tampil_mhs`
--- (See below for the actual view)
+-- Stand-in struktur untuk tampilan `tampil_mhs`
+-- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `tampil_mhs` (
 `id` int(11)
@@ -54,8 +54,8 @@ CREATE TABLE `tampil_mhs` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `tampil_semua`
--- (See below for the actual view)
+-- Stand-in struktur untuk tampilan `tampil_semua`
+-- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `tampil_semua` (
 `nim` varchar(12)
@@ -70,7 +70,7 @@ CREATE TABLE `tampil_semua` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_log`
+-- Struktur dari tabel `tb_log`
 --
 
 CREATE TABLE `tb_log` (
@@ -82,7 +82,7 @@ CREATE TABLE `tb_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_log`
+-- Dumping data untuk tabel `tb_log`
 --
 
 INSERT INTO `tb_log` (`id`, `nim`, `telp_lama`, `telp_baru`, `tgl_diubah`) VALUES
@@ -98,7 +98,7 @@ INSERT INTO `tb_log` (`id`, `nim`, `telp_lama`, `telp_baru`, `tgl_diubah`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_mhs`
+-- Struktur dari tabel `tb_mhs`
 --
 
 CREATE TABLE `tb_mhs` (
@@ -111,7 +111,7 @@ CREATE TABLE `tb_mhs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_mhs`
+-- Dumping data untuk tabel `tb_mhs`
 --
 
 INSERT INTO `tb_mhs` (`id`, `nim`, `nama`, `jk`, `alamat`, `telp`) VALUES
@@ -120,11 +120,10 @@ INSERT INTO `tb_mhs` (`id`, `nim`, `nama`, `jk`, `alamat`, `telp`) VALUES
 (3, '161240000518', 'Fattakh Faza Ababiel', 'L', 'Jobokuto', '08987654333'),
 (4, '161240000546', 'Dicky Daryono', 'L', 'Pekalongan', '08987654334'),
 (5, '161240000526', 'Sigma Luxvian', 'P', 'Plajan', '08987654335'),
-(8, '161240000534', 'Farid Hernando', 'L', 'Mlonggo', '08987654336'),
-(10, '161240000590', 'Muhammad Azhar Salim', 'L', 'Jepara', '0891213184919');
+(8, '161240000534', 'Farid Hernando', 'L', 'Mlonggo', '08987654336');
 
 --
--- Triggers `tb_mhs`
+-- Trigger `tb_mhs`
 --
 DELIMITER $$
 CREATE TRIGGER `update_telp` AFTER UPDATE ON `tb_mhs` FOR EACH ROW begin
@@ -140,7 +139,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Structure for view `tampil_log`
+-- Struktur untuk view `tampil_log`
 --
 DROP TABLE IF EXISTS `tampil_log`;
 
@@ -149,7 +148,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Structure for view `tampil_mhs`
+-- Struktur untuk view `tampil_mhs`
 --
 DROP TABLE IF EXISTS `tampil_mhs`;
 
@@ -158,7 +157,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Structure for view `tampil_semua`
+-- Struktur untuk view `tampil_semua`
 --
 DROP TABLE IF EXISTS `tampil_semua`;
 
@@ -169,32 +168,32 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
--- Indexes for table `tb_log`
+-- Indeks untuk tabel `tb_log`
 --
 ALTER TABLE `tb_log`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_mhs`
+-- Indeks untuk tabel `tb_mhs`
 --
 ALTER TABLE `tb_mhs`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_log`
+-- AUTO_INCREMENT untuk tabel `tb_log`
 --
 ALTER TABLE `tb_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `tb_mhs`
+-- AUTO_INCREMENT untuk tabel `tb_mhs`
 --
 ALTER TABLE `tb_mhs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
